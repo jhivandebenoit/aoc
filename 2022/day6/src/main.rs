@@ -13,10 +13,10 @@ fn main() {
             buffer.pop();
         }
         buffer.insert(0, c);
-        pos += 1;
         if buffer.len() < unique {
             continue;
         }
+        pos += 1;
         let test :HashSet<char,RandomState> = HashSet::from_iter(buffer.to_owned());
         if test.len() == unique {
             println!("Unique {} found {:?}",unique,pos);

@@ -1,6 +1,6 @@
 use std::{
     collections::{HashMap, HashSet},
-    fmt, fs,
+    fs,
 };
 fn main() {
     let input = fs::read_to_string("test.txt").expect("Couldn't parse input");
