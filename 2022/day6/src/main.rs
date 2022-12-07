@@ -1,4 +1,4 @@
-use std::{fs, collections::HashSet};
+use std::{fs, collections::{HashSet, hash_map::RandomState}};
 
 fn main() {
     let input = fs::read_to_string("input.txt").expect("Could not parse file");
@@ -17,7 +17,7 @@ fn main() {
         if buffer.len() < unique {
             continue;
         }
-        let test :HashSet<char> = HashSet::from_iter(buffer.to_owned());
+        let test :HashSet<char,RandomState> = HashSet::from_iter(buffer.to_owned());
         if test.len() == unique {
             println!("Unique {} found {:?}",unique,pos);
             break;
